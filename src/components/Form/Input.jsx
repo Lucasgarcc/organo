@@ -1,18 +1,15 @@
 /* eslint-disable react/prop-types */
+
 import './Input.css';
 
-
-const Input = ({label, type , text, placeholder }) => {
+const Input = ({ label, type, placeholder }) => {
 
   return (
-    <form >
-      <div className='form-container'>
-        <label htmlFor={label} > {text}</label>
+        <div className='form-container'>
+        <label htmlFor=''>{label}</label>
         <input type={type} name={label} placeholder={placeholder} />
       </div>
-
-    </form>
-  )
+  );
 }
 
 

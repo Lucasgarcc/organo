@@ -1,33 +1,59 @@
 :root {
+  --cor-p-01: 
+  --cor-p-02: 
   --cor-01: 
-  --cor-01: 
-  --cor-01: 
-  --cor-01: 
-  --cor-01: 
-  --cor-01: 
+  --cor-02: 
+  --cor-03: 
+  --cor-03: 
+  --font: 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-title: Georgia, 'Times New Roman', Times, serif;
+  --font-size: 1.2rem;
 }
 
-form {
-  margin: 0 auto;
-  display: grid;
-  justify-content: center;
+body,
+input,
+textarea,
+button {
+  font-size: var(--font-size);
+  font-family: var(--font);
+}
+
+
+
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  color: #121212;
+}
+
+input {
+  display: block;
+  border: 1px solid #ccc;
   width: 100%;
+  padding: 0.6rem;
+  border-radius: var(--radius);
+  background: #eee;
+  transition: 0.2s;
 }
 
-.form-container  {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  gap: .5rem;
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color);
+  background: rgb(243, 243, 243);
+  box-shadow: 0 0 0 3px var(--color-light);
 }
 
 
 input {
-  border: 1px solid #080808;
+  margin-left: .5rem;
+  border: 1px solid #dedede;
   color: #252525;
   border-radius: 4px;
-  width: 250%;
+  width: 100%;
   height: 40px;
   background-color: #fff;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.12);
 }
