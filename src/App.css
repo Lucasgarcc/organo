@@ -1,14 +1,14 @@
 #root {
-  margin: 0;
-  max-width: 1280px;
+  margin: 0 auto;
   text-align: center;
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
 }
 
 figure {
+  background-color: #6278f7;;
   margin: 0;
   padding: 0;
 }
