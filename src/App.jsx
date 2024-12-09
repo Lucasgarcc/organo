@@ -12,8 +12,6 @@ function App() {
     console.log('Novo colaborador registrado:', collaboratorData);
   };
 
-
-function App() {
   return (
     <div className="App">
       <Banner />

@@ -1,14 +1,8 @@
-
 import React from 'react';
+import Button from '../Button/Button'
 import SuspenseList from '../SuspenseList/SuspenseList';
 import Input from './input';
 import './Form.css';
-import Button from '../Button/Button';
-
-import SuspenseList from '../SuspenseList/SuspenseList';
-import Input from './input';
-import './Form.css';
-
 
 const times = [
   'Programação', 
@@ -38,24 +32,32 @@ const Form = ({ registerCollaborator }) => {
       image,
       time,
     });
-
-    // Exibir o alerta com os dados preenchidos
-    alert(`Form enviado!\nNome: ${name}\nCargo: ${position}\nImagem: ${image}`);
-
-    // Verificar se algum campo obrigatório está vazio antes de prosseguir
-    if (!name || !position || !image || !time) {
-      setShowErrors(true); // Exibir mensagem de erro se algum campo estiver vazio
-    }
-
-    // Caso todos os dados estejam preenchidos
-    setShowErrors(false);
-
+    
     // Limpar os campos após enviar
     setName('');
     setPosition('');
     setImage('');
     setTime('');
+
+    // Verificar se algum campo obrigatório está vazio antes de prosseguir
+    if (!name || !position || !image || !time) {
+      setShowErrors(true); 
+      // Exibir mensagem de erro se algum campo estiver vazio
+    } else {
+      // Caso todos os dados estejam preenchidos
+      setShowErrors(false);
+      
+      // Exibir o alerta com os dados preenchidos
+      return alert(`Form enviado!\nNome: ${name}\nCargo: ${position}\nImagem: ${image}`);
+
+    }
+
+ 
+
+
+ 
   };
+
 
   return (
     <section className="form">
@@ -100,21 +102,5 @@ const Form = ({ registerCollaborator }) => {
     </section>
   );
 };
-
-const Form = () => {
-  return (
-    <section className='form'>
-      <form>
-        <h2>Preencha os dados para criar o card do Colaborador</h2>
-        <Input htmlFor="nome" name='nome' type='text' label='Nome: ' placeholder='Digite seu nome' />
-        <Input htmlFor="cargo" name='cargo' type='text' label='Cargo: ' placeholder='Digite seu cargo' />
-        <Input htmlFor="imagem" name='imagem' type='url' label='Imagem: ' placeholder='Digite uma url de imagem' />
-        <SuspenseList label="Times" options={times} />
-
-      </form>
-    </section>
-  );
-}
-
 
 export default Form;
