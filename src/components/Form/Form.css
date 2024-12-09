@@ -20,31 +20,3 @@
     font-size: 1.5rem;
   }
 }
-
-  margin:  4rem 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  border-radius: .325rem;
-  justify-items: center;
-
-}
-
-.form form {
-  padding: 2rem 4rem;
-  max-width: 80%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  text-align: left;
-  background-color: #f2f2f2;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
-}
-
-.form h2 {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-}
-
