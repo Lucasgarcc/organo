@@ -16,27 +16,41 @@ const times = [
 ]
 
 
-const Form = () => {
+const Form = ({ registerCollaborator }) => {
+
   const [name, setName] = React.useState('');
   const [position, setPosition] = React.useState('');
   const [image, setImage] = React.useState('');
+  const [time, setTime] = React.useState('');
   const [showErrors, setShowErrors] = React.useState(false);
 
   const salveClick = (event) => {
     event.preventDefault();
-    if (!name || !position || !image) {
-      setShowErrors(true);
-      return;
-    }
-    setShowErrors(false);
+    // Enviar dados para o registro
+    registerCollaborator({
+      name,
+      position,
+      image,
+      time,
+    });
+
+    // Exibir o alerta com os dados preenchidos
     alert(`Form enviado!\nNome: ${name}\nCargo: ${position}\nImagem: ${image}`);
-    
+
+    // Verificar se algum campo obrigatório está vazio antes de prosseguir
+    if (!name || !position || !image || !time) {
+      setShowErrors(true); // Exibir mensagem de erro se algum campo estiver vazio
+    }
+
+    // Caso todos os dados estejam preenchidos
+    setShowErrors(false);
+
     // Limpar os campos após enviar
-    setName(''), setPosition(''), setImage('');
+    setName('');
+    setPosition('');
+    setImage('');
+    setTime('');
   };
-
-
-    
 
   return (
     <section className="form">
@@ -53,6 +67,7 @@ const Form = () => {
           placeholder="Digite seu nome"
           requiredMessage="Por favor, preencha o campo Nome"
         />
+
         <Input
           htmlFor="cargo"
           name="cargo"
@@ -64,6 +79,7 @@ const Form = () => {
           placeholder="Digite seu cargo"
           requiredMessage="Por favor, preencha o campo Cargo"
         />
+
         <Input
           htmlFor="imagem"
           name="imagem"
@@ -73,7 +89,7 @@ const Form = () => {
           setValue={setImage}
           placeholder="Digite uma URL de imagem"
         />
-        <SuspenseList label="Times" options={times} />
+        <SuspenseList label="Times" options={times} value={time} setValue={setTime} />
         <Button>Criar Card</Button>
       </form>
     </section>
