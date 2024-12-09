@@ -18,11 +18,6 @@ function App() {
     <div className="App">
       <Banner />
       <Form registerCollaborator={addNewCollaborator} />
-
-    <div className='App'>
-    <Banner />
-    <Form />
-
     </div>
   );
 }
