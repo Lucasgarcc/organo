@@ -2,7 +2,11 @@ import React from 'react';
 import './SuspenseList.css'
 const SuspenseList = ({ label, options }) => {
   return (
-    <div className='suspense-list'>
+
+import './SuspenseList'
+const SuspenseList = ({ label, options }) => {
+  return (
+    <div>
       <label htmlFor="select-field">{label}</label>
       <select>
       {options.map(item => {
