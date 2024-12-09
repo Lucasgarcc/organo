@@ -1,5 +1,26 @@
 .form  {
   padding: 3.5rem 3.5rem;
+
+  border-radius: .325rem;
+  &.form form {
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+    background-color: #f2f2f2;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
+  }
+
+  &.form h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+}
+
   margin:  4rem 0;
   display: flex;
   flex-direction: column;
@@ -26,3 +47,4 @@
   text-transform: uppercase;
   font-size: 1.5rem;
 }
+

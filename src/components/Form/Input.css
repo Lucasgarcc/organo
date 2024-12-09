@@ -19,6 +19,65 @@ button {
 }
 
 
+input:focus {
+  outline: none;
+  border-color: var(--color);
+  background: rgb(243, 243, 243);
+  box-shadow: 0 0 0 3px var(--color-light);
+}
+
+.form-container {
+  margin: .7rem 0;
+
+  &.form-container label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+    color: #121212;
+  }
+  
+  &.form-container input {
+    padding: 0.6rem;
+    border: 1px solid #dedede;
+    color: #252525;
+    border-radius: .6rem;
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.12);
+    transition: 0.2s;
+  }
+
+}
+
+
+
+.error-message {
+  position: relative;
+  inset: 1.4rem 0;
+  background-color: #ffffff;
+  padding: 1rem;
+  color: #292929;
+  font-size: .875rem;
+  text-align: center;
+  border-radius: .2rem;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.error-message::before {
+  position: absolute;
+  inset: -.6rem 1rem ;
+  display: block;
+  content: '';
+  width: 2px;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-width: 10px;
+  border-radius: .5rem;
+  border-bottom: 15px solid #ffffff;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.12);
+}
 
 
 label {
@@ -46,7 +105,6 @@ textarea:focus {
   box-shadow: 0 0 0 3px var(--color-light);
 }
 
-
 input {
   margin-left: .5rem;
   border: 1px solid #dedede;
@@ -57,3 +115,4 @@ input {
   background-color: #fff;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.12);
 }
+

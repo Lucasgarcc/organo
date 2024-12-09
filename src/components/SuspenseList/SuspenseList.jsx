@@ -1,4 +1,8 @@
 import React from 'react';
+import './SuspenseList.css'
+const SuspenseList = ({ label, options }) => {
+  return (
+
 import './SuspenseList'
 const SuspenseList = ({ label, options }) => {
   return (
