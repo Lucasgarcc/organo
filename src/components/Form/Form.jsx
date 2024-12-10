@@ -25,37 +25,24 @@ const Form = ({ registerCollaborator }) => {
 
   const salveClick = (event) => {
     event.preventDefault();
-    // Enviar dados para o registro
-    registerCollaborator({
-      name,
-      position,
-      image,
-      time,
-    });
+    const isValid = name && position; // Verifica se nome E posição estão preenchidos
     
-    // Limpar os campos após enviar
-    setName('');
-    setPosition('');
-    setImage('');
-    setTime('');
+    if (isValid) {
+      registerCollaborator({ name, position, image, time });
 
-    // Verificar se algum campo obrigatório está vazio antes de prosseguir
-    if (!name || !position || !image || !time) {
-      setShowErrors(true); 
-      // Exibir mensagem de erro se algum campo estiver vazio
+      alert(`Form enviado!\nNome: ${name}\nCargo: ${position}\nImagem: ${image}`);
+
+      setName('');
+      setPosition('');
+      setImage('');
+      setTime('');
+
     } else {
-      // Caso todos os dados estejam preenchidos
-      setShowErrors(false);
-      
-      // Exibir o alerta com os dados preenchidos
-      return alert(`Form enviado!\nNome: ${name}\nCargo: ${position}\nImagem: ${image}`);
-
+      setShowErrors(true); 
+      // Define showErrors como true se houver algum erro
+      // Aqui você poderia adicionar lógica para exibir mensagens de erro mais específicas para cada campo
     }
 
- 
-
-
- 
   };
 
 
@@ -72,7 +59,7 @@ const Form = ({ registerCollaborator }) => {
           showError={showErrors}
           label="Nome"
           placeholder="Digite seu nome"
-          requiredMessage="Por favor, preencha o campo Nome"
+          requiredMessage="Por favor, preencha o campo Nome "
         />
 
         <Input
@@ -84,7 +71,7 @@ const Form = ({ registerCollaborator }) => {
           showError={showErrors}
           label="Cargo"
           placeholder="Digite seu cargo"
-          requiredMessage="Por favor, preencha o campo Cargo"
+          requiredMessage="Por favor, preencha o campo Cargo "
         />
 
         <Input

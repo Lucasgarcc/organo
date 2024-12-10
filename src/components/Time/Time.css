@@ -1,0 +1,10 @@
+.time {
+  padding: 2rem;
+  background-color: #d9f7e9;
+
+  &.time h3 {
+    font-size: 2rem;
+    display: inline-block;
+    border-bottom: .3rem solid #57c278;
+  }
+}
