@@ -4,18 +4,9 @@ import SuspenseList from '../SuspenseList/SuspenseList';
 import Input from './input';
 import './Form.css';
 
-const times = [
-  'Programação', 
-  'Front-End', 
-  'Data Science', 
-  'DevOps',
-  'UX & UI Design',
-  'Mobile',
-  'Inovação e Gestão',
-]
 
 
-const Form = ({ registerCollaborator }) => {
+const Form = ({ registerCollaborator, times }) => {
 
   const [name, setName] = React.useState('');
   const [position, setPosition] = React.useState('');
