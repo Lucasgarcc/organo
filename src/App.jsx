@@ -55,7 +55,7 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Form registerCollaborator={addNewCollaborator} />
+      <Form times={times.map((item) => item.name)} registerCollaborator={addNewCollaborator} />
       {times.map(time => <Time 
         key={time.name} 
         title={time.name} 

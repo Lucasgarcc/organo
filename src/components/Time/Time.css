@@ -1,10 +1,19 @@
 .time {
   padding: 2rem;
-  background-color: #d9f7e9;
-
+  
   &.time h3 {
+    align-self: flex-start;
+
     font-size: 2rem;
     display: inline-block;
-    border-bottom: .3rem solid #57c278;
+    border-bottom: .3rem solid ;
+  }
+
+  .time-collaborators {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
   }
 }

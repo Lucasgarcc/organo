@@ -1,0 +1,42 @@
+.collaborator {
+  width: 280px;
+  background-color: #fff5f5;
+
+  .header {
+    background-color: #fff5f5;
+    border-radius: .6rem 0;
+    &.header img {
+      width: 100px;
+      border-radius:  50%;
+      position: relative;
+      inset: auto auto -50px auto;
+    }
+  }
+  
+  .footer {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: .3rem .3rem .9rem  rgba(26, 26, 26, 0.363);
+  
+    &.footer h4 {
+      margin-bottom: .5rem;
+      color: #6278f7;
+      font-size: 1.1rem;
+      line-height: 1.3rem;
+      font-weight: bold;
+    }
+  
+    &.footer h5 {
+      padding: 0 1rem;
+      font-size: 1.1rem;
+      line-height: 1.4rem;
+      color: #212121;
+    }
+  }
+}
+
+
+
+
