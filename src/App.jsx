@@ -61,7 +61,17 @@ function App() {
         title={time.name} 
         colorCard={time.colorPrimary} 
         colorBackground={time.colorSegundary}
+
        />)}
+       {times.map(time => 
+       <Time 
+          key={time.name}
+          title={time.name}
+          colorCard={time.colorPrimary}
+          colorBackground={time.colorSegundary}
+          collaborator={collaborator.filter((colab) => colab.time === time.name) || []}
+       />
+       )}
     </div>
   );
 }
