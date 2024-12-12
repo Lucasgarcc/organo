@@ -16,12 +16,12 @@ const Form = ({ registerCollaborator, times }) => {
 
   const salveClick = (event) => {
     event.preventDefault();
-    const isValid = name && position; // Verifica se nome E posição estão preenchidos
+    const isValid = name && position && time; // Verifica se nome E posição estão preenchidos
     
     if (isValid) {
       registerCollaborator({ name, position, image, time });
 
-      alert(`Form enviado!\nNome: ${name}\nCargo: ${position}\nImagem: ${image}`);
+      alert(`Form enviado!\nNome: ${name}\nCargo: ${position}\nImagem: ${image} \nTime: ${time}`);
 
       setName('');
       setPosition('');
