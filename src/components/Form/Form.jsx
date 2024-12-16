@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../Button/Button'
 import SuspenseList from '../SuspenseList/SuspenseList';
-import Input from './input';
+import Input from './Input/Input';
 import './Form.css';
 
 
