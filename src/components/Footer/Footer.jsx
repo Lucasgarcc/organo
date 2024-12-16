@@ -1,4 +1,5 @@
 import './Footer.css';
+import logoImg from '../../assets/imagens/logo.png';
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
@@ -8,7 +9,7 @@ const Footer = () => {
     <footer className='footer'>
 
     <section className='logo'>
-            <img src="/src/assets/imagens/logo.png" alt="" />
+            <img src={logoImg} alt="" />
     </section>
     
       <section className='footer-social'>
