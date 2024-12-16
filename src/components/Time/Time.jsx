@@ -1,10 +1,11 @@
 import Collaborator from '../Collaborator/Collaborator';
 import './Time.css';
 
-const Time = ({ title, colorBackground, colorCard, collaborator = [] }) => {
+const Time = ({ title, colorBackground, colorPrimary, colorCard, collaborator = [] }) => {
 
 
   return (
+   (collaborator.length > 0) &&
     <section className='time' style={{backgroundColor: colorBackground}}>
       <h3 style={{borderColor: colorCard}}>{title}</h3>
       <div className='time-collaborators'>
@@ -18,6 +19,7 @@ const Time = ({ title, colorBackground, colorCard, collaborator = [] }) => {
             image={colab.image}
             alt={`Imagem de ${colab.name}`}
             position={colab.position}
+            colorBackgroud={colorCard}
           />
         ))
       ) :(      
