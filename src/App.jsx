@@ -3,7 +3,7 @@ import './App.css';
 import Banner from './components/Banner';
 import Form from './components/Form/Form';
 import Time from './components/Time/Time';
-
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -69,9 +69,10 @@ function App() {
           title={time.name}
           colorCard={time.colorPrimary}
           colorBackground={time.colorSegundary}
-          collaborator={collaborator.filter((colab) => colab.time === time.name) || []}
+          collaborator={collaborator.filter((colab) => colab.time === time.name)}
        />
        )}
+       <Footer />
     </div>
   );
 }

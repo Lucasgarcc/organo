@@ -1,12 +1,13 @@
 import React from "react";
 import './Collaborator.css'
 
-const Collaborator = ({ name, image, alt, position}) => {
+const Collaborator = ({ name, image, alt, position, colorBackgroud}) => {
 
   return (
     <div className="collaborator">
-      <div className="header">
-        <figure>
+      <div className="header" style={{ backgroundColor: colorBackgroud }}
+      >
+        <figure >
           <img src={image} alt={alt} />
         </figure>
       </div>

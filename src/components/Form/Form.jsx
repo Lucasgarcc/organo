@@ -20,9 +20,6 @@ const Form = ({ registerCollaborator, times }) => {
     
     if (isValid) {
       registerCollaborator({ name, position, image, time });
-
-      alert(`Form enviado!\nNome: ${name}\nCargo: ${position}\nImagem: ${image} \nTime: ${time}`);
-
       setName('');
       setPosition('');
       setImage('');

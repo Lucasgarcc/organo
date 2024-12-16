@@ -13,6 +13,7 @@
     "organo-app": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
     "react-iconsax-vite": "^1.8.0"
   },
   "devDependencies": {
