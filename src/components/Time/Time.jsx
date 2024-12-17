@@ -1,7 +1,7 @@
 import Collaborator from '../Collaborator/Collaborator';
 import './Time.css';
 
-const Time = ({ title, colorBackground, colorPrimary, colorCard, collaborator = [] }) => {
+const Time = ({ title, colorBackground, colorCard, collaborator = [] }) => {
 
 
   return (
