@@ -40,6 +40,14 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-  }
+
+  }  
+}
+
+@media screen and (max-width: 480px) {
   
+  .footer-social ul {
+    display: flex;
+    justify-content: center;
+  }
 }
