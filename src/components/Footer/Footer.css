@@ -2,7 +2,6 @@
   padding: 5rem;
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   background-color: #6278F7;
   color: #fff;
@@ -11,22 +10,22 @@
     display: flex;
     order: 1;
   }
-  .footer-social ul li {
+  ul li {
     display: inline-block;
     margin-right: 2rem;
     text-decoration: none;
   }
 
-  &.footer-social ul li:last-child {
+  ul li:last-child {
     margin-right: 0;
   }
 
-  &.copyright {
+  .copyright {
     display: flex;
     order: 1;
   }
-  &.logo img {
-    width: 90;
+  .logo img {
+    width: 90%;
   }
 }
 
@@ -36,9 +35,11 @@
   .logo img {
     width: 80%;
   }
+
   .footer {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
 
   }  
@@ -49,5 +50,6 @@
   .footer-social ul {
     display: flex;
     justify-content: center;
+    align-self: center;
   }
 }

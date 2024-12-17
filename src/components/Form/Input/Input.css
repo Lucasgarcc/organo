@@ -29,14 +29,14 @@ input:focus {
 .form-container {
   margin: .7rem 0;
 
-  &.form-container label {
+  label {
     display: block;
     margin-bottom: .5rem;
     font-weight: 600;
     color: #121212;
   }
   
-  &.form-container input {
+  input {
     padding: 0.6rem;
     border: 0.06rem solid #dedede;
     color: #252525;
