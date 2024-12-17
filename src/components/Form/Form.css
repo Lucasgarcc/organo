@@ -21,3 +21,10 @@
     color: #131313;
   }
 }
+
+
+@media screen and (max-width: 480px) {
+  .form form {
+    width: 100%;
+  }
+}

@@ -15,17 +15,17 @@ const Footer = () => {
       <section className='footer-social'>
         <ul>
           <li>
-            <a href="facebook.com" target='_blank'>
+            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=100009024418011" target='_blank'>
             <FaFacebookSquare style={{color:'fff', fontSize: 30 }} />
             </a>
         </li>
         <li>
-            <a href="linkdin.com" target='_blank'>
+            <a href="https://www.linkedin.com/in/lucas-garcia-l/" target='_blank'>
             <FaLinkedin  style={{color:'fff', fontSize: 30 }} />
             </a>
         </li>
         <li>
-            <a href="facebook.com" target='_blank'>
+            <a href="https://github.com/Lucasgarcc" target='_blank'>
              <FaGithubSquare style={{color:'fff', fontSize: 30 }}/>
             </a>
         </li>
