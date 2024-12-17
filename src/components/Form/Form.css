@@ -1,8 +1,8 @@
 .form  {
   padding: 3.5rem 3.5rem;
-
   border-radius: .325rem;
-  &.form form {
+  
+  form {
     margin: 0 auto;
     padding: 2rem 4rem;
     max-width: 60%;
@@ -14,7 +14,7 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
   }
 
-  &.form h2 {
+  h2 {
     text-align: center;
     text-transform: uppercase;
     font-size: 1.5rem;

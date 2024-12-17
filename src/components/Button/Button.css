@@ -12,6 +12,7 @@ button {
   text-transform: uppercase;
   color: #fff;
 }
+
 button:hover {
   background-color: #95ffd4;
   color: #091035;

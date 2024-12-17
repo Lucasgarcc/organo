@@ -1,7 +1,7 @@
 .time {
   padding: 2rem;
   
-  &.time h3 {
+  h3 {
     align-self: flex-start;
 
     font-size: 2rem;

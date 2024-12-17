@@ -1,14 +1,14 @@
 .suspense-list {
   margin: .7rem 0;
 
-  &.suspense-list label {
+  label {
     display: block;
     margin-bottom: .5rem;
     font-weight: 600;
     color: #121212;
   }
 
-  &.suspense-list select {
+  select {
     padding: .5rem;
     border: 1px solid #dedede;
     color: #252525;

@@ -4,6 +4,7 @@ import Banner from './components/Banner';
 import Form from './components/Form/Form';
 import Time from './components/Time/Time';
 import Footer from './components/Footer/Footer';
+import { func } from 'prop-types';
 
 function App() {
 
@@ -52,6 +53,10 @@ function App() {
     console.log('Novo colaborador registrado:', collaboratorData);
   };
 
+  const deleteCollaborator = ()  => {
+    console.log('delete colaborador');
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -65,11 +70,12 @@ function App() {
        />)}
        {times.map(time => 
        <Time 
-          key={time.name}
-          title={time.name}
-          colorCard={time.colorPrimary}
-          colorBackground={time.colorSegundary}
-          collaborator={collaborator.filter((colab) => colab.time === time.name)}
+        key={time.name} // Use time.name como key
+        title={time.name}
+        colorCard={time.colorPrimary}
+        colorBackground={time.colorSegundary}
+        collaborator={collaborator}
+        deleteCollaborator={deleteCollaborator}
        />
        )}
        <Footer />
