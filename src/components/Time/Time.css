@@ -1,9 +1,9 @@
 .time {
   padding: 2rem;
-  
+  position: relative;
+
   h3 {
     align-self: flex-start;
-
     font-size: 2rem;
     display: inline-block;
     border-bottom: .3rem solid ;
@@ -15,5 +15,14 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
+  }
+
+  .input-color {
+    position: absolute;
+    inset: 1.3rem 3rem auto auto;
+    border-radius: .2rem;
+    background-color: #ffffff11;
+    border-color: #bec8ff;
+
   }
 }
