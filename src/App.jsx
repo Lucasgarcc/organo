@@ -8,43 +8,49 @@ import { func } from 'prop-types';
 
 function App() {
 
-  const times = [ 
+  const [times, setTimes] = React.useState([ 
     {
       name: 'Programação',
-      colorPrimary: '#57c278',
-      colorSegundary: '#d9f7e9',
+      color: '#d9f7e9',
     },
     {
       name: 'Front-End',
-      colorPrimary: '#82cffa',
-      colorSegundary: '#ebfbff',
+      color: '#ebfbff',
     },
     {
       name: 'Data Science',
-      colorPrimary: '#a6d157',
-      colorSegundary: '#f0f8e2',
+      color: '#f0f8e2',
     },
     {
       name: 'DevOps',
-      colorPrimary: '#e06b69',
-      colorSegundary: '#fde7e8',
+      color: '#fde7e8',
     },
     {
       name: 'UX & UI Design',
-      colorPrimary: '#db6ebf',
-      colorSegundary: '#fae5f5',
+      color: '#fae5f5',
     },
     {
       name: 'Mobile',
-      colorPrimary: '#feba05',
-      colorSegundary: '#fff5d9',
+      color: '#fff5d9',
     },
     {
       name: 'Inovação e Gestão',
-      colorPrimary: '#ff8a29',
-      colorSegundary: '#ffeedf',
+      color: '#ffeedf',
     },
-  ]
+  ])
+
+
+  const handleColorTime = (color, name) => {
+    setTimes(
+      times.map(time => {
+        if(time.name === name) {
+          time.color = color;
+        }
+        return time;
+      })
+    )
+  }
+
 
   const [collaborator, setCollaborator] = React.useState([]);
 
@@ -66,18 +72,20 @@ function App() {
         title={time.name} 
         colorCard={time.colorPrimary} 
         colorBackground={time.colorSegundary}
+      />)}
 
-       />)}
-       {times.map(time => 
-       <Time 
-        key={time.name} // Use time.name como key
-        title={time.name}
-        colorCard={time.colorPrimary}
-        colorBackground={time.colorSegundary}
-        collaborator={collaborator}
-        deleteCollaborator={deleteCollaborator}
-       />
-       )}
+      <h2 className='title'>Minha Organização</h2>
+      {times.map((time) => (
+        
+        <Time
+          key={time.name}
+          time={time}
+          collaborator={collaborator}
+          deleteCollaborator={deleteCollaborator}
+          changeColorTime={handleColorTime}
+        />
+      ))}
+
        <Footer />
     </div>
   );
