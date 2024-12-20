@@ -8,7 +8,7 @@ const SuspenseList = ({ label, options, value, setValue }) => {
       <select
         id="select-field"
         value={value}
-        onChange={(e) => setValue(e.target.value)} // Atualiza o estado com o valor selecionado
+        onChange={(e) => setValue(e.target.value)} 
       >
         <option value="" disabled>
           Selecione um time

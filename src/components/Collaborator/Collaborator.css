@@ -14,23 +14,6 @@
     }
   }
 
-  .delete {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-
-    p {
-      font-size: 1.225rem;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .icon-delete {
-      cursor: pointer;
-    }
-  }
 
   .footer {
     display: flex;
@@ -42,7 +25,7 @@
     box-shadow: .3rem .3rem .9rem rgba(26, 26, 26, 0.363);
 
     h4 {
-      margin-bottom: .5rem;
+      margin-bottom: -2rem;
       color: #6278f7;
       font-size: 1.1rem;
       line-height: 1.3rem;
@@ -55,5 +38,36 @@
       line-height: 1.4rem;
       color: #212121;
     }
+
+    
+   
   }
+}
+
+.delete {
+  padding-bottom: 1rem;
+  width: 200px;
+  height: 30px;
+  position: absolute;
+  inset: 32.5rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+
+  p {
+    color: #212121;
+    font-size: 1.225rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .icon-delete {
+    cursor: pointer;
+  }
+}
+
+.collaborator:hover .delete {
+  display: flex; /* Mostra o ícone e o texto */
 }

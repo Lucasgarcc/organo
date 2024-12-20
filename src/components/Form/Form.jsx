@@ -6,24 +6,24 @@ import './Form.css';
 
 
 
-const Form = ({ registerCollaborator, times }) => {
+const Form = ({ registerCollaborator, teams }) => {
 
   const [name, setName] = React.useState('');
   const [position, setPosition] = React.useState('');
   const [image, setImage] = React.useState('');
-  const [time, setTime] = React.useState('');
+  const [team, setTeam] = React.useState('');
   const [showErrors, setShowErrors] = React.useState(false);
 
   const salveClick = (event) => {
     event.preventDefault();
-    const isValid = name && position && time; // Verifica se nome E posição estão preenchidos
+    const isValid = name && position && team; // Verifica se nome E posição estão preenchidos
     
     if (isValid) {
-      registerCollaborator({ name, position, image, time });
+      registerCollaborator({ name, position, image, team });
       setName('');
       setPosition('');
       setImage('');
-      setTime('');
+      setTeam('');
 
     } else {
       setShowErrors(true); 
@@ -71,7 +71,7 @@ const Form = ({ registerCollaborator, times }) => {
           setValue={setImage}
           placeholder="Digite uma URL de imagem"
         />
-        <SuspenseList label="Times" options={times} value={time} setValue={setTime} />
+        <SuspenseList label="Times" options={teams} value={team} setValue={setTeam} />
         <Button>Criar Card</Button>
       </form>
     </section>

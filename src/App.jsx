@@ -4,49 +4,56 @@ import Banner from './components/Banner';
 import Form from './components/Form/Form';
 import Time from './components/Time/Time';
 import Footer from './components/Footer/Footer';
-import { func } from 'prop-types';
+import {v4 as uuidv4 } from 'uuid';
 
 function App() {
 
-  const [times, setTimes] = React.useState([ 
+  const [teams, setTeams] = React.useState([ 
     {
+      id: uuidv4(),
       name: 'Programação',
       color: '#d9f7e9',
     },
     {
+      id: uuidv4(),
       name: 'Front-End',
       color: '#ebfbff',
     },
     {
+      id: uuidv4(),
       name: 'Data Science',
       color: '#f0f8e2',
     },
     {
+      id: uuidv4(),
       name: 'DevOps',
       color: '#fde7e8',
     },
     {
+      id: uuidv4(),
       name: 'UX & UI Design',
       color: '#fae5f5',
     },
     {
+      id: uuidv4(),
       name: 'Mobile',
       color: '#fff5d9',
     },
     {
+      id: uuidv4(),
       name: 'Inovação e Gestão',
       color: '#ffeedf',
     },
   ])
 
 
-  const handleColorTime = (color, name) => {
-    setTimes(
-      times.map(time => {
-        if(time.name === name) {
-          time.color = color;
+  const handleColorTeam = (color, id) => {
+    setTeams(
+      teams.map(team => {
+        if(team.id === id) {
+          team.color = color;
         }
-        return time;
+        return team;
       })
     )
   }
@@ -59,30 +66,29 @@ function App() {
     console.log('Novo colaborador registrado:', collaboratorData);
   };
 
-  const deleteCollaborator = ()  => {
-    console.log('delete colaborador');
+  const deleteCollaborator = (id)  => {
+    setCollaborator(collaborator.filter(collaborator => collaborator.id !== id))
   }
 
   return (
     <div className="App">
       <Banner />
-      <Form times={times.map((item) => item.name)} registerCollaborator={addNewCollaborator} />
-      {times.map(time => <Time 
-        key={time.name} 
-        title={time.name} 
-        colorCard={time.colorPrimary} 
-        colorBackground={time.colorSegundary}
+      <Form teams={teams.map((item) => item.name)} registerCollaborator={addNewCollaborator} />
+      {teams.map(team => <Time 
+        key={team.name} 
+        title={team.name} 
       />)}
 
       <h2 className='title'>Minha Organização</h2>
-      {times.map((time) => (
+
+      {teams.map((team) => (
         
         <Time
-          key={time.name}
-          time={time}
+          key={team.name}
+          team={team}
           collaborator={collaborator}
           deleteCollaborator={deleteCollaborator}
-          changeColorTime={handleColorTime}
+          changeColorTeam={handleColorTeam}
         />
       ))}
 

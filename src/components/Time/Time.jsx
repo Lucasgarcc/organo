@@ -1,28 +1,28 @@
 import Collaborator from '../Collaborator/Collaborator';
-import './Time.css';
+import './Team.css';
 import background from '/src/assets/imagens/fundo.png';
 import hexToRgba from 'hex-to-rgba';
 
-const Time = ({ time, collaborator = [], deleteCollaborator, changeColorTime }) => {
+const Time = ({ team, collaborator = [], deleteCollaborator, changeColorTeam }) => {
   const filteredCollaborators = collaborator.filter(
-    (colab) => colab.time === time.name
+    (colab) => colab.team === team.name
   );
 
   return (
     filteredCollaborators.length > 0 && (
       <section
         className="time"
-        style={{ backgroundImage: `url(${background})`, backgroundColor: hexToRgba(time.color,'.5') }}
+        style={{ backgroundImage: `url(${background})`, backgroundColor: hexToRgba(team.color,'.5') }}
       >
         <input
-          value={time.color}
+          value={team.color}
           type="color"
           className="input-color"
           onChange={(event) =>
-            changeColorTime(event.target.value, time.name)
+          changeColorTeam(event.target.value, team.id)
           }
         />
-        <h3 style={{ borderColor: time.color }}>{time.name}</h3>
+        <h3 style={{ borderColor: team.color }}>{team.name}</h3>
         <div className="time-collaborators">
           {filteredCollaborators.map((colab, index) => (
             <Collaborator
@@ -31,7 +31,7 @@ const Time = ({ time, collaborator = [], deleteCollaborator, changeColorTime }) 
               image={colab.image}
               alt={`Imagem de ${colab.name}`}
               position={colab.position}
-              colorBackgroud={time.color}
+              colorBackgroud={team.color}
               deleteCollaborator={deleteCollaborator}
             />
           ))}
