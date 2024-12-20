@@ -16,13 +16,13 @@ const Collaborator = ({ id, name, image, alt, position, colorBackgroud, deleteCo
         <h4>{name}</h4>
         <h5>{position}</h5>
       </div>
-      <div className="delete"  >
+     
+      <div className="delete" onClick={() => deleteCollaborator(id)} >
         <p>Deletar</p>
-        <i >
-          <MdDelete className="icon-delete" color={colorBackgroud} fontSize={27} marginTop={'.3rem'} onClick={deleteCollaborator} />
-        </i>
+        <MdDelete className="icon-delete" color={colorBackgroud} fontSize={27} />
       </div>
     </div>
+    
   );
 
 };
