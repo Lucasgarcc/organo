@@ -7,7 +7,9 @@
     border-radius: .6rem;
 
     img {
-      width: 100px;
+      width: 60%;
+      height: 130px;
+      object-fit: cover;
       border-radius: 50%;
       position: relative;
       inset: auto auto -2rem auto;
@@ -18,7 +20,7 @@
   .footer {
     display: flex;
     flex-direction: column;
-    padding-top: 6rem;
+    padding-top: 2rem;
     padding-bottom: 3rem;
     border-radius: .5rem;
     background: #fff;
@@ -35,6 +37,7 @@
     h5 {
       padding: 0 1rem;
       font-size: 1.1rem;
+      font-weight: 500;
       line-height: 1.4rem;
       color: #212121;
     }
@@ -44,12 +47,18 @@
   }
 }
 
+.favorite {
+  position: relative;
+  inset: -1rem 7rem 0 ;
+  color: #212121;
+}
+
 .delete {
   padding-bottom: 1rem;
   width: 200px;
   height: 30px;
-  position: absolute;
-  inset: 32.5rem 0 0 0;
+  position: relative;
+  inset: -4rem 9.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +66,7 @@
   gap: 1rem;
 
   p {
-    color: #212121;
+    color: #2e2e2e;
     font-size: 1.225rem;
     text-transform: uppercase;
     font-weight: 600;
@@ -66,8 +75,4 @@
   .icon-delete {
     cursor: pointer;
   }
-}
-
-.collaborator:hover .delete {
-  display: flex; /* Mostra o ícone e o texto */
 }
