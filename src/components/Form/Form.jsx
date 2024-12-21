@@ -4,27 +4,27 @@ import SuspenseList from '../SuspenseList/SuspenseList';
 import Input from './Input/Input';
 import './Form.css';
 
-
-
-const Form = ({ registerCollaborator, teams }) => {
+const Form = ({ registerCollaborator, teams, registerTeam }) => {
 
   const [name, setName] = React.useState('');
   const [position, setPosition] = React.useState('');
   const [image, setImage] = React.useState('');
   const [team, setTeam] = React.useState('');
+  const [addTeam, setAddTeam] = React.useState('');
+  const [addColorTeam, setAddColorTeam] = React.useState('');
   const [showErrors, setShowErrors] = React.useState(false);
 
   const salveClick = (event) => {
-    event.preventDefault();
-    const isValid = name && position && team; // Verifica se nome E posição estão preenchidos
+    event.preventDefault()
+    const isValid = name && position && team;
+    // Verifica se nome E posição estão preenchidos
     
     if (isValid) {
-      registerCollaborator({ name, position, image, team });
+      registerCollaborator({ name, position, image, team, addTeam});
       setName('');
       setPosition('');
       setImage('');
       setTeam('');
-
     } else {
       setShowErrors(true); 
       // Define showErrors como true se houver algum erro
@@ -33,6 +33,25 @@ const Form = ({ registerCollaborator, teams }) => {
 
   };
 
+
+  const salveTeam = (event) => {
+    event.preventDefault();
+
+    if (addTeam && addColorTeam) {
+      registerTeam({ 
+        name: addTeam, 
+        color: addColorTeam,
+      })
+
+      //Resetando os campos após adicionar o time
+      setShowErrors(false);
+      setAddTeam('');
+      setAddColorTeam('');
+
+    } else {
+      setShowErrors(true);
+    }
+  }
 
   return (
     <section className="form">
@@ -73,6 +92,34 @@ const Form = ({ registerCollaborator, teams }) => {
         />
         <SuspenseList label="Times" options={teams} value={team} setValue={setTeam} />
         <Button>Criar Card</Button>
+      </form>
+
+      <form onSubmit={salveTeam}>
+        <h2>Preencha os dados para criar um novo Time</h2>
+        <Input
+          htmlFor="team"
+          name="team"
+          type="text"
+          value={addTeam}
+          setValue={setAddTeam}
+          showError={showErrors}
+          label="Time"
+          placeholder="Digite seu nome"
+          requiredMessage="Por favor, preencha o campo nome do Time "
+        />
+
+        <Input
+          htmlFor="color"
+          name="color"
+          type="color"
+          value={addColorTeam}
+          setValue={setAddColorTeam}
+          showError={showErrors}
+          label="Color"
+          placeholder="Digite a cor do time"
+          requiredMessage="Por favor, adicione a Cor do Time "
+        />
+        <Button>Adicionar </Button>
       </form>
     </section>
   );

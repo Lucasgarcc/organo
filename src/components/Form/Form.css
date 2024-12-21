@@ -1,7 +1,9 @@
 .form  {
   padding: 3.5rem 3.5rem;
   border-radius: .325rem;
-  
+  display: flex;
+  gap: 2rem;
+
   form {
     margin: 0 auto;
     padding: 2rem 4rem;
@@ -22,9 +24,21 @@
   }
 }
 
+@media screen and (max-width: 1024px){
+  .form {
+    flex-direction: column;
+  }
+}
 
 @media screen and (max-width: 480px) {
-  .form form {
-    width: 100%;
+  
+  .form {
+    padding: 3rem 1rem;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+  form {
+    max-width: 100%;
   }
 }
